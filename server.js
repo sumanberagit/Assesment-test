@@ -4,6 +4,9 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const errorHandler = require('./middlewares/errorHandler');
+const productRoutes = require('./routes/productRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const investmentRoutes = require('./routes/investmentRoutes');
 
 dotenv.config();
 connectDB();
@@ -14,6 +17,9 @@ app.use(cors());
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/investments', investmentRoutes);
 
 // Error Handling Middleware
 app.use(errorHandler);
